@@ -1,0 +1,19 @@
+<h2>Cadastro de Cliente</h2>
+<hr>
+
+<!-- observe que o atributo action está apontado para o front controller, informando
+     dois parâmetros via get: class: o controlador que será invocado;
+     method: o método que será invocado -->
+<form method="post" action="Request.php?class=ClienteCtr&method=save">
+
+<!-- no atributo value devemos pegar o dado da model, para isso precisamos
+     usar os métodos get : toda view exibe um model, não se esqueça! -->
+<input value="<?=$this->model->getId()?>" 
+   type="number" name="id" placeholder="digite o ID!">
+<br>
+<input value="<?=$this->model->getNome()?>" 
+    type="text" name="nome" placeholder="digite o NOME!">
+<br>
+<input type="submit" name="comando" value="Enviar">
+
+</form>
